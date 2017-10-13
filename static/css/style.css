@@ -1,3 +1,18 @@
-h1 {
-	color: blue;
+.homeFooter {
+	text-align: center;
+	font: bold 12px/30px Georgia, serif;
+}
+
+#h2Content {
+	color: grey;
+}
+
+.headerContent {
+	text-align: center;
+	color: black;
+}
+
+h3 {
+    opacity: 0.8;
+    color: blue;
 }

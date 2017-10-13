@@ -1,14 +1,37 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Assignment 2</title>
+		<title>Rishabh's Blog</title>
 		<meta charset="utf-8" />
-		<link rel="stylesheet" href="/static/css/style.css" />
+		<link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" />
 	</head>
 	<body>
-		<h1>Hello World</h1>
 
-		<script src="/static/js/script.js"></script>
+		<header>
+			<h1 class="headerContent">My Blog</h1>
+			<h4 class="headerContent" id="h2Content">Created by Rishabh Wason</h2>
+		</header>
+		<h3> Blog Articles:</h3>
+		1. <a href="{{ url_for('blog_experiments') }}">8 Experiments in Motivation</a><br><br>
+		2. <a href="{{ url_for('blog_focus') }}">A Mindful Shift of Focus</a><br><br>
+		3. <a href="{{ url_for('blog_direction') }}">How to Develop an Awesome Sense of Direction</a><br><br>
+		4. <a href="{{ url_for('blog_writer') }}">Training to Be a Good Writer</a><br><br>
+		5. <a href="{{ url_for('blog_productivity') }}">What Producitivity Systems Won't Solve</a><br><br>
+		<br>
+		<br>
 
+		<footer class="homeFooter">
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<a href="{{ url_for('index') }}">Home</a>
+			<a href="{{ url_for('contact') }}">Contact Us</a>
+			<a href="{{ url_for('about') }}">About Us</a>
+ 		</footer>
 	</body>
-</html>		
+</html>
