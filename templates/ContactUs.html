@@ -4,16 +4,17 @@
 		<title> Contact Us </title>
 		<meta charset="utf-8" />
 		<link rel="stylesheet" href="{{url_for('static', filename='css/ContactUsStyle.css')}}" />
-		<script type="text/javascript" src="{{url_for('static', filename='js/script.js'}"></script>
+		<script type="text/javascript" src="{{url_for('static', filename='js/script.js')}}"></script>
 	</head>
 
 	<body>
-		<form id="inputForm">
+		<form id="inputForm" action="/contact/submit" method="POST">
 			<h5 class="errorDiv" id="errorMsg" hidden >Required Value</h5>
-			Name:<input type="text" name="Name" id="name"/><br>
-			Subject:<input type="text" name="Subject" id="subject"/><br>
-			Message:<input type="text" name="Message" id="message"/><br>
-			<button type="submit" onClick="caller(document.getElementById('name').value, document.getElementById('subject').value, document.getElementById('message').value);">Submit</button><br>
+			Name:<input type="text" name="name_field" id="name"/><br>
+			Subject:<input type="text" name="subject_field" id="subject"/><br>
+			Message:<input type="text" name="message_field" id="message"/><br>
+			Email:<input type="email" name="email_field" id="email"/><br>
+			<button type="submit" onClick="caller(document.getElementById('name').value, document.getElementById('subject').value, document.getElementById('message').value, document.getElementById('email'));">Submit</button><br>
 		</form>
 
 		<footer class="contactUsFooter">

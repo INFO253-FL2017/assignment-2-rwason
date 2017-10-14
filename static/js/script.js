@@ -1,11 +1,12 @@
-function caller(name, subject, message) {
-	if (!name) {
+function caller(name, subject, message, email) {
+	document.getElementById('inputForm').addEventListener('submit', prevDef())
+	if (!name || !subject || !message || !email) {
 		document.getElementById('errorMsg').hidden = false;
+	} else {
+		alert("Hi " + name +  ", your message has been sent")
 	}
-	if (!subject) {
-		document.getElementById('errorMsg').hidden = false;
-	}
-	if (!message) {
-		document.getElementById('errorMsg').hidden = false;
-	}
+}
+
+function prevDef() {
+	event.preventDefault();
 }
