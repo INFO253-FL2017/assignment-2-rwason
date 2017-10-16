@@ -35,7 +35,7 @@ def about():
 
 @app.route('/contact')
 def contact():
-    return render_template('ContactUs.html')
+    return render_template('ContactUs.html', error_message="")
 
 @app.route('/contact/submit', methods=['POST'])
 def submit_form():
@@ -43,16 +43,20 @@ def submit_form():
     message = request.form.get('message_field')
     subject = request.form.get('subject_field')
 
-    full_message = name + " sent a message: " + message
+    if not (name and message and subject):
+        return render_template('ContactUs.html', error_message="Must enter all fields below")
     
-    requests.post(
+    full_message = name + " sent a message: " + message
+    request_result = requests.post(
     INFO253_MAILGUN_DOMAIN,
     auth=(INFO253_MAILGUN_USER, INFO253_MAILGUN_PASSWORD),
     data={"from": INFO253_MAILGUN_FROM_EMAIL,
           "to": INFO253_MAILGUN_TO_EMAIL,
           "subject": subject,
           "text": full_message})
-    return contact()
+    print(request_result)
+    msg = "Hi " + name + ", your message has been sent!"
+    return render_template('ContactUs.html', success_message=msg)
 
 @app.route('/blog/8-experiments-in-motivation')
 def blog_experiments():

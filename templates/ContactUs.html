@@ -9,7 +9,8 @@
 
 	<body>
 		<form id="inputForm" action="/contact/submit" method="POST">
-			<h5 class="errorDiv" id="errorMsg" hidden >Required Value</h5>
+			<h4 class="errorDiv" id="errMsg">{{error_message}}</h4>
+			<h5 class="successDiv" id="successMsg">{{success_message}}</h5>
 			Name:<input type="text" name="name_field" id="name"/><br>
 			Subject:<input type="text" name="subject_field" id="subject"/><br>
 			Message:<input type="text" name="message_field" id="message"/><br>
