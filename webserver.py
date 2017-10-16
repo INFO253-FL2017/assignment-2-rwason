@@ -42,9 +42,8 @@ def submit_form():
     name = request.form.get('name_field')
     message = request.form.get('message_field')
     subject = request.form.get('subject_field')
-    email = request.form.get('email_field')
 
-    full_message = name + " sent a message: " + message + "\n Email is: " + email
+    full_message = name + " sent a message: " + message
     
     requests.post(
     INFO253_MAILGUN_DOMAIN,
